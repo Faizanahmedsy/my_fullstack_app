@@ -1,10 +1,25 @@
 import express from "express";
+import cors from "cors";
 const app = express();
+
+const PORT = 8000;
+
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+  })
+);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+app.get("/api/express", (req, res) => {
+  res.json({
+    message: "Hello from express backend",
+  });
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
