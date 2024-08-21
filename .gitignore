@@ -10,6 +10,7 @@
 /frontend/.env
 /backend/node_modules
 /backend/.env
+/backend/package-lock.json
 
 /.pnp
 .pnp.js
